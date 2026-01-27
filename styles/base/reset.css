@@ -1,0 +1,387 @@
+/**
+ * ============================================================================
+ * A MORE MODERN CSS RESET - BY ANDY BELL
+ * ============================================================================
+ * 
+ * Um reset CSS moderno e eficiente que remove estilos padrão dos navegadores
+ * de forma sensata, mantendo a acessibilidade e a usabilidade.
+ * 
+ * Referência: https://andy-bell.co.uk/a-more-modern-css-reset/
+ * ============================================================================
+ */
+
+/**
+ * 1. PREVENÇÃO DE COMPORTAMENTOS PADRÃO PROBLEMÁTICOS
+ * Remove estilos padrão que causam problemas de layout e espaçamento
+ */
+
+/* Remove margens e paddings padrão de todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * 2. RESET DE BOX-SIZING
+ * Altera o cálculo de tamanho para incluir padding e border
+ * Aplicado a todos os elementos para consistência
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+ * 3. RESET DO ELEMENTO HTML
+ * Define comportamento base do documento
+ */
+
+html {
+  /* Garante scroll suave ao usar âncoras */
+  scroll-behavior: smooth;
+}
+
+/**
+ * 4. RESET DO ELEMENTO BODY
+ * Define estilos base para o corpo do documento
+ */
+
+body {
+  /* Remove altura mínima padrão do body */
+  min-height: 100vh;
+  
+  /* Garante que o text rendering seja otimizado */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Define line-height base para melhor legibilidade */
+  line-height: 1.5;
+  
+  /* Prevenção de comportamentos inesperados com fonts */
+  font-family: inherit;
+}
+
+/**
+ * 5. RESET DE HEADINGS
+ * Remove tamanhos e espaçamentos padrão de títulos
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Remove margin padrão */
+  margin: 0;
+  
+  /* Remove line-height excessivo de headings */
+  line-height: 1.2;
+  
+  /* Define font-weight normal para não aplicar bold automaticamente */
+  font-weight: 400;
+}
+
+/**
+ * 6. RESET DE LISTAS
+ * Remove estilos padrão de listas
+ */
+
+ol,
+ul {
+  /* Remove lista padrão do navegador */
+  list-style: none;
+}
+
+/**
+ * 7. RESET DE IMAGENS E MEDIA
+ * Garante responsividade e comportamento previsível
+ */
+
+/* Imagens responsivas por padrão */
+img,
+picture,
+video,
+canvas,
+svg {
+  /* Exibe como bloco para remover espaço extra inline */
+  display: block;
+  
+  /* Tamanho máximo 100% do container */
+  max-width: 100%;
+  
+  /* Altura ajusta proporcionalmente */
+  height: auto;
+}
+
+/**
+ * 8. RESET DE ELEMENTOS DE ENTRADA E FORMULÁRIOS
+ * Garante consistência em inputs, textareas e selects
+ */
+
+input,
+button,
+textarea,
+select {
+  /* Herda font do elemento pai */
+  font: inherit;
+  
+  /* Remove border padrão */
+  border: none;
+  
+  /* Remove background padrão */
+  background: none;
+  
+  /* Remove cor padrão */
+  color: inherit;
+}
+
+/* Remove estilos de aparência padrão de inputs */
+input,
+textarea,
+select {
+  /* Remove estilos visuais específicos do navegador */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Reseta checkbox e radio buttons */
+input[type="checkbox"],
+input[type="radio"] {
+  /* Permite estilização customizada */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Remove focus outline padrão (será customizado depois) */
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none;
+}
+
+/**
+ * 9. RESET DE BOTÕES
+ * Remove estilos padrão de button
+ */
+
+button {
+  /* Remove cursor padrão de pointer */
+  cursor: pointer;
+  
+  /* Remove background padrão */
+  background: transparent;
+  
+  /* Garante que o texto não seja selecionável por padrão */
+  user-select: none;
+}
+
+/**
+ * 10. RESET DE ÂNCORAS/LINKS
+ * Remove underline padrão e cores
+ */
+
+a {
+  /* Remove sublinhado padrão */
+  text-decoration: none;
+  
+  /* Remove cor padrão */
+  color: inherit;
+  
+  /* Garante que o cursor seja pointer */
+  cursor: pointer;
+}
+
+/**
+ * 11. RESET DE ELEMENTOS DE TEXTO
+ * Normaliza comportamento de elementos inline
+ */
+
+p,
+span,
+strong,
+em,
+small,
+code,
+pre {
+  /* Remove margins padrão */
+  margin: 0;
+  
+  /* Garante herança de font */
+  font: inherit;
+}
+
+/**
+ * 12. RESET DE BLOCKQUOTE
+ * Remove estilos padrão de citações
+ */
+
+blockquote {
+  /* Remove margin padrão */
+  margin: 0;
+  
+  /* Remove padding padrão */
+  padding: 0;
+}
+
+/**
+ * 13. RESET DE TABELAS
+ * Remove border padrão e collapse
+ */
+
+table {
+  /* Colapsa bordas */
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  /* Remove padding padrão */
+  padding: 0;
+  
+  /* Alinha texto ao topo */
+  vertical-align: top;
+}
+
+/**
+ * 14. RESET DE ELEMENTOS DE FORMULÁRIO ESPECÍFICOS
+ */
+
+/* Remove estilos de textarea */
+textarea {
+  /* Permite redimensionamento apenas horizontal */
+  resize: none;
+  
+  /* Remove border padrão */
+  border: none;
+  
+  /* Garante que não haja overflow */
+  overflow: auto;
+}
+
+/* Remove seta padrão de select */
+select {
+  /* Remove dropdown padrão */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+  /* Remove background padrão */
+  background: transparent;
+  
+  /* Define cursor como pointer */
+  cursor: pointer;
+}
+
+/* Remove spinner de input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/**
+ * 15. RESET DE ELEMENTOS SEMÂNTICOS HTML5
+ * Normaliza comportamento de elementos semânticos
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  /* Define como block por padrão */
+  display: block;
+}
+
+/**
+ * 16. RESET DE ELEMENTOS MENOS COMUNS
+ */
+
+/* Reset de hr */
+hr {
+  /* Remove border padrão */
+  border: 0;
+  
+  /* Define apenas top border */
+  border-top: 1px solid currentColor;
+  
+  /* Remove margin padrão */
+  margin: 0;
+}
+
+/* Reset de code e pre */
+code,
+pre {
+  /* Define font monospace */
+  font-family: monospace;
+  
+  /* Mantém espaço branco */
+  white-space: pre;
+}
+
+/**
+ * 17. RESET DE ELEMENTOS DE CONTEÚDO EMBARCADO
+ */
+
+embed,
+iframe,
+object {
+  /* Responsivo por padrão */
+  max-width: 100%;
+  
+  /* Altura automática */
+  height: auto;
+}
+
+/**
+ * 18. RESETS DE ACESSIBILIDADE
+ * Garante acessibilidade mantendo o reset
+ */
+
+/* Mantém elementos visualmente escondidos mas acessíveis a screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/**
+ * 19. RESET DE ELEMENTOS COM ATRIBUTO DISABLED
+ * Remove comportamento visual de elementos desabilitados
+ */
+
+[disabled] {
+  /* Define opacidade para indicar desabilitado */
+  opacity: 0.6;
+  
+  /* Desabilita cursor de pointer */
+  cursor: not-allowed;
+}
+
+/**
+ * ============================================================================
+ * FIM DO RESET CSS MODERNO
+ * ============================================================================
+ */
