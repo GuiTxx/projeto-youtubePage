@@ -8,11 +8,14 @@
     --back-color-dark: #0F0F0F;
     --back-color-light: #eee6e6;
 }
-body {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: var(--back-color-dark);
     color: var(--color-text);
     font-family: var(--font-text);
+    img{
+        background-color: transparent;
+    }
 }

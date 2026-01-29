@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -9,85 +9,78 @@
     <link rel="stylesheet" href="/styles/base/global.css">
     <link rel="stylesheet" href="/styles/base/reset.css">
     <link rel="stylesheet" href="/styles/layout/header.css">
+    <link rel="stylesheet" href="/styles/layout/sidebar.css">
 </head>
 
 <body>
     <main>
 
+        <!-- HEADER COM PESQUISA/CRIAR/USER -->
+        <header class="container_Header">
 
-        <header class="container-header">
-
-            <div class="menu-esquerdo">
-
-                <button id="hamburguer-menu">
-                    <img src="/assets/icons/menu_hamburguer.svg" alt="Menu Hambúrguer Icone">
+            <div class="left_Menu">
+                <!-- MENU HAMBURGUER -->
+                <button id="hamburguer_Icon">
+                    <img src="/assets/icons/geral/menu_Hamburguer.svg" alt="Menu Hambúrguer Icone">
                 </button>
-
-                <a href="/" id="logo-ytb">
-                    <img src="/assets/logo-header/youtube.svg" alt="YouTube Logo">
+                <!-- LOGO YOUTUBE -->
+                <a href="/" id="youtube_Logo">
+                    <img src="/assets/logo-Header/youtube.svg" alt="YouTube Logo">
                 </a>
-
             </div>
 
-
-            <div class="middle-content">
-                <div class="search-bar">
+            <div class="middle_Content">
+                <div class="search_Bar">
                     <input type="text" placeholder="Pesquisar">
-                    <a href="#" id="keyboard">
-                        <img src="/assets/icons/keyboard.svg" alt="Ícone de teclado">
-                    </a>
+                    <button id="keyboard_Search">
+                        <img src="/assets/icons/geral/keyboard_Search.svg" alt="Ícone de Teclado para Pesquisa">
+                    </button>
                 </div>
-                <div class="search-button">
+                <div class="searchButton">
                     <button>
-                        <img src="/assets/icons/search.svg" alt="Ícone de lupa">
+                        <img src="/assets/icons/geral/lupa_Search.svg" alt="Ícone de Lupa">
                     </button>
                 </div>
 
-                <div class="audio-search">
-                    <button> <img src="/assets/icons/audio.svg" alt="Ícone de microfone"> </button>
+                <div class="audioSearch">
+                    <button>
+                        <img src="/assets/icons/geral/audio_Microfone.svg" alt="Ícone de Microfone">
+                    </button>
                 </div>
             </div>
 
-            <div class="criar">
-                <div class="user-actions">
-                    <div class="create-button">
-                        <button>
-                            <a href="#">
-                                <img src="/assets/icons/add.svg" alt="Criar">
-                            </a>
-                        </button>
+            <div class="criarButton">
+                <div class="userActions">
+                    <button id="internoButton">
+                        <img src="/assets/icons/geral/add_Icon.svg" alt="Criar vídeo">
                         <h3>Criar</h3>
-                    </div>
-                    <button id="notify">
-                        <a href="#">
-                            <img src="/assets/icons/notification_unfillled.svg" alt="Notificações">
-                        </a>
+                    </button>
+                    <button id="notifyButton">
+                        <img src="/assets/icons/unfilled/notification_unfillled.svg" alt="Botão de Notificações">
                     </button>
                 </div>
-
-                <div class="user-profile">
+                <div class="userProfile">
                     <button>
-                        <a href="#"></a>
                     </button>
                 </div>
             </div>
 
         </header>
 
-
-        <div class="content">
-            <aside class="sidebar">
-                <nav class="main-navegation">
+        <!-- PARTE PRINCIPAL DA TELA -->
+        <div class="hero_Screen">
+            <aside class="sideBar">
+                <nav class="main_Navegation">
                     <ul>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/home_filled.svg" alt="Ícone Início">
+                                <img src="/assets/icons/unfilled/home_Unfilled.svg" alt="Ícone Aba Início Youtube">
                                 <span>Início</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/yt-shorts_unfilled.png" alt="Ícone Shorts">
+                                <img src="/assets/icons/geral/shorts_IconYoutube.svg" alt="Ícone Aba Youtube Shorts">
                                 <span>Shorts</span>
                             </a>
                         </li>
@@ -96,25 +89,60 @@
 
                 <hr class="division">
 
-                <nav class="subscription-navegation">
-                    <div class="inscricoes">
-                        <button>>
+                <nav class="subs_Nav">
+                    <div class="subs">
+                        <button>
                             <h2>Inscrições</h2>
-                            <img src="/assets/icons/arrow_right.svg" alt="Ícone de seta para direita">
+                            <img src="/assets/icons/geral/arrow_Right.svg" alt="Ícone de seta para direita">
                         </button>
                     </div>
-                    <ul class="subscription-list">
-                        <li><a href="#"> Nome e Imagem 1 </a></li>
-                        <li><a href="#"> Nome e Imagem 2 </a></li>
-                        <li><a href="#"> Nome e Imagem 3 </a></li>
-                        <li><a href="#"> Nome e Imagem 4 </a></li>
-                        <li><a href="#"> Nome e Imagem 5 </a></li>
-                        <li><a href="#"> Nome e Imagem 6 </a></li>
-                        <li><a href="#"> Nome e Imagem 7 </a></li>
+                    <ul class="subs_List">
+                        <li>
+                            <a href="#">
+                                <span></span>
+                                <p>Alura</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span></span>
+                                <p>Padre Reginaldo Manzotti</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span></span>
+                                <p>Manual do Mundo</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span></span>
+                                <p>Padre Paulo Ricardo</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span></span>
+                                <p>3D Print Academy</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span></span>
+                                <p>O Primo Rico</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span></span>
+                                <p>Adolfz</p>
+                            </a>
+                        </li>
                     </ul>
-                    <div class="more-button">
+                    <div class="moreInfo">
                         <button>
-                            <img src="/assets/icons/arrow_down.svg" alt="Ícone de seta para baixo">
+                            <img src="/assets/icons/geral/arrow_Down.svg" alt="Ícone de seta para baixo">
                             <h2>Mostrar mais</h2>
                         </button>
                     </div>
@@ -122,48 +150,49 @@
 
                 <hr class="division">
 
-                <nav class="user">
-                    <div class="user-data">
-                        <button>
+                <nav class="user_DataTime">
+                    <div class="user_data">
+                        <a href="#">
                             <h2>Você</h2>
-                            <img src="/assets/icons/arrow_right.svg" alt="Ícone de seta para direita">
-                        </button>
+                            <img src="/assets/icons/geral/arrow_Right.svg" alt="Ícone de seta para direita">
+                        </a>
                     </div>
                     <ul>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/history.svg" alt="Ícone Histórico">
+                                <img src="/assets/icons/geral/historico_Search.svg" alt="Ícone Histórico">
                                 <span>Histórico</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons//playlist.svg" alt="Ícone playlist">
+                                <img src="/assets/icons/geral/playlist.svg" alt="Ícone playlist">
                                 <span>Playlist</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/watch_later.svg" alt="Ícone assistir mais tarde">
+                                <img src="/assets/icons/unfilled/watchLater_Unfilled.svg"
+                                    alt="Ícone assistir mais tarde">
                                 <span>Assistir mais tarde</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/like_videos.svg" alt="Ícone vídeos curtidos">
+                                <img src="/assets/icons/unfilled/Liked_videoUnfilled.svg" alt="Ícone vídeos curtidos">
                                 <span>Vídeos com "Gostei"</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/myVideos_unfilled.svg" alt="Ícone meus Vídeos">
+                                <img src="/assets/icons/unfilled/myVideos_unfilled.svg" alt="Ícone meus Vídeos">
                                 <span>Seus vídeos</span>
                             </a>
                         </li>
                     </ul>
-                    <div class="more-button">
+                    <div class="moreInfo">
                         <button>
-                            <img src="/assets/icons/arrow_down.svg" alt="Ícone de seta para baixo">
+                            <img src="/assets/icons/geral/arrow_Down.svg" alt="Ícone de seta para baixo">
                             <h2>Mostrar mais</h2>
                         </button>
                     </div>
@@ -171,31 +200,31 @@
 
                 <hr class="division">
 
-                <nav class="explore">
+                <nav class="exploreDiv">
                     <h2>Explorar</h2>
                     <ul>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/shops_unfilled.svg" alt="Ícone em Shopping">
+                                <img src="/assets/icons/unfilled/shops_unfilled.svg" alt="Ícone em Shopping">
                                 <span>Shopping</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/music.svg" alt="Ícone em Música">
+                                <img src="/assets/icons/geral/music.svg" alt="Ícone em Música">
                                 <span>Música</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/movie_unfilled.svg" alt="Ícone em Filmes">
+                                <img src="/assets/icons/unfilled/movie_Unfilled.svg" alt="Ícone em Filmes">
                                 <span>Filmes</span>
                             </a>
                         </li>
                     </ul>
-                    <div class="more-button">
+                    <div class="moreInfo">
                         <button>
-                            <img src="/assets/icons/arrow_down.svg" alt="Ícone de seta para baixo">
+                            <img src="/assets/icons/geral/arrow_Down.svg" alt="Ícone de seta para baixo">
                             <h2>Mostrar mais</h2>
                         </button>
                     </div>
@@ -203,30 +232,30 @@
 
                 <hr class="division">
 
-                <nav class="more-youtube">
+                <nav class="moreYoutube">
                     <h2>Mais do YouTube</h2>
                     <ul>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/logo-yt.png" alt="Ícone Shorts">
+                                <img src="/assets/icons/geral/youtube-color-icon.svg" alt="Ícone Youtube Premium">
                                 <span>Youtube Premium</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/yt-studio.png" alt="Ícone YouTube Studio">
+                                <img src="/assets/icons/geral/youtube-studio-icon.svg" alt="Ícone YouTube Studio">
                                 <span>YouTube Studio</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/yt-music.png" alt="Ícone YouTube Music">
+                                <img src="/assets/icons/geral/youtube-music-icon.svg" alt="Ícone YouTube Music">
                                 <span>YouTube Music</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/yt-kids.png" alt="Ícone YouTube Kids">
+                                <img src="/assets/icons/geral/youtube-kids-icon.svg" alt="Ícone YouTube Kids">
                                 <span>YouTube Kids</span>
                             </a>
                         </li>
@@ -235,29 +264,30 @@
 
                 <hr class="division">
 
-                <nav class="settings-help-feedback">
+                <nav class="helpIcons">
                     <ul>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/settings_unfileed.svg" alt="Ícone Configurações">
+                                <img src="/assets/icons/unfilled/settings_Unfilled.svg" alt="Ícone Configurações">
                                 <span>Configurações</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/flag_unfilled.svg" alt="Ícone Histórico de denúncias">
+                                <img src="/assets/icons/unfilled/bandeirinha_Unfilled.svg"
+                                    alt="Ícone Histórico de denúncias">
                                 <span>Histórico de denúncias</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/help_unfilled.svg" alt="Ícone Ajuda">
+                                <img src="/assets/icons/unfilled/ajuda_Unfilled.svg" alt="Ícone Ajuda">
                                 <span>Ajuda</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/assets/icons/feedback_unfilled.svg" alt="Ícone Enviar feedback">
+                                <img src="/assets/icons/unfilled/feedback_Unfilled.svg" alt="Ícone Enviar feedback">
                                 <span>Enviar feedback</span>
                             </a>
                         </li>
@@ -266,28 +296,76 @@
 
                 <hr class="division">
 
-                <nav class="about-bar">
+                <nav class="footer_Nav">
                     <ul>
-                        <div class="sobre-imprensa">
-                            <li><a href="#">Sobre</a></li>
-                            <li><a href="#">Imprensa</a></li>
+                        <div class="sobreImprensa">
+                            <li>
+                                <a href="#">
+                                    <span>Sobre</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>Imprensa</span>
+                                </a>
+                            </li>
                         </div>
-                        <li><a href="#">Direitos autorais</a></li>
-                        <li><a href="#">Entre em contato</a></li>
-                        <li><a href="#">Criadores de conteúdo</a></li>
-                        <div class="publi-dev">
-                            <li><a href="#">Publicidade</a></li>
-                            <li><a href="#">Desenvolvedores</a></li>
+                        <li>
+                            <a href="#">
+                                <span>Direitos autorais</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Entre em contato</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Criadores de conteúdo</span>
+                            </a>
+                        </li>
+                        <div class="publiDev">
+                            <li>
+                                <a href="#">
+                                    <span>Publicidade</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>Desenvolvedores</span>
+                                </a>
+                            </li>
                         </div>
                     </ul>
                     <ul>
-                        <div class="terms-privacy">
-                            <li><a href="#">Termos</a></li>
-                            <li><a href="#">Privacidade</a></li>
+                        <div class="termsPrivacy">
+                            <li>
+                                <a href="#">
+                                    <span>Termos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>Privacidade</span>
+                                </a>
+                            </li>
                         </div>
-                        <li><a href="#">Política e segurança</a></li>
-                        <li><a href="#">Como funciona o YouTube</a></li>
-                        <li><a href="#">Testar novos recursos</a></li>
+                        <li>
+                            <a href="#">
+                                <span>Política e segurança</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Como funciona o YouTube</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Testar novos recursos</span>
+                            </a>
+                        </li>
                     </ul>
                     <p>© 2024 Google LLC</p>
                 </nav>
