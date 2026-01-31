@@ -1,0 +1,34 @@
+.hero_Screen {
+    .videos_Section {
+        width: 100%;
+        .filter {
+            ul {
+                display: flex;
+                align-items: center;
+                height: 56px;
+                gap: 20px;
+                li {
+                    height: 32px;
+                    width: auto;
+                    display: flex;
+                    align-items: center;
+                    flex-shrink: 0;
+
+
+                    button {
+                        white-space: nowrap;
+                        flex-shrink: 0;
+                        height: 100%;
+                        padding: 0 8px;
+                        border-radius: 6px;
+                        background-color: #303030;
+                        a {
+                            font-size: 14px;
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
