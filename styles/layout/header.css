@@ -124,6 +124,63 @@
         }
     }
 
+
+
+    /* Menu Criar antes OAuth 2.0 */
+    .loginAccount {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+        
+        .userOptions {
+            display: flex;
+            align-items: center;
+            button{
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+            
+            
+        }
+
+        .userLogin{
+            button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 40px;
+                width: 150px;
+                gap: 4px;
+                border-radius: 18px;
+                border: 1px solid #303030;
+                img{
+                    width: 24px;
+                    height: 24px;
+                }
+                h3{
+                    font-weight: 500;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Menu após OAuth */
     .criarButton {
         height: 100%;
         gap: 1vw;
