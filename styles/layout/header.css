@@ -1,5 +1,4 @@
 /* ESTILIZAÇÃO MENU ESQUERDO HEADER */
-
 .container_Header {
     display: flex;
     align-items: center;
@@ -128,10 +127,11 @@
 
     /* Menu Criar antes OAuth 2.0 */
     .loginAccount {
+        /* Quero mover eles para direita */
         display: flex;
         align-items: center;
-        gap: 1vw;
-        
+        gap: 0.5vw;
+        /* Adicionado */
         .userOptions {
             display: flex;
             align-items: center;
@@ -143,28 +143,12 @@
                 justify-content: center;
                 border-radius: 50%;
             }
-            
-            
         }
 
         .userLogin{
-            button{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 40px;
-                width: 150px;
-                gap: 4px;
-                border-radius: 18px;
-                border: 1px solid #303030;
-                img{
-                    width: 24px;
-                    height: 24px;
-                }
-                h3{
-                    font-weight: 500;
-                    font-size: 18px;
-                }
+            /* Estilos para o botão renderizado do Google */
+            div {
+                min-width: 145px;
             }
         }
     }

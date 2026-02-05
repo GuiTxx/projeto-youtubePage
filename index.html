@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube</title>
@@ -12,6 +13,10 @@
     <link rel="stylesheet" href="./styles/layout/header.css">
     <link rel="stylesheet" href="./styles/layout/sidebar.css">
     <link rel="stylesheet" href="./styles/layout/filters.css">
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+
 </head>
 
 <body>
@@ -57,12 +62,7 @@
                         <img src="/assets/icons/geral/tres_points.svg" alt="Mais opções Ícone">
                     </button>
                 </div>
-                <div class="userLogin">
-                    <button>
-                        <img src="/assets/icons/unfilled/login_unfilled.svg" alt="Ícone Perfil do Usuário">
-                        <h3>Fazer login</h3>
-                    </button>
-                </div>
+                <div class="userLogin" id="buttonGoogle"></div>
             </div>
 
         </header>
@@ -157,7 +157,7 @@
                             <img src="/assets/icons/geral/arrow_Right.svg" alt="Ícone de seta para direita">
                         </a>
                     </div>
-                    <ul class = "list_sidebar">
+                    <ul class="list_sidebar">
                         <li>
                             <a href="#">
                                 <img src="/assets/icons/geral/historico_Search.svg" alt="Ícone Histórico">
@@ -202,7 +202,7 @@
 
                 <nav class="exploreDiv">
                     <h2>Explorar</h2>
-                    <ul class = "list_sidebar">
+                    <ul class="list_sidebar">
                         <li>
                             <a href="#">
                                 <img src="/assets/icons/unfilled/shops_unfilled.svg" alt="Ícone Shopping">
