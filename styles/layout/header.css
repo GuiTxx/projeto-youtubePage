@@ -153,17 +153,6 @@
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
     /* Menu após OAuth */
     .criarButton {
         height: 100%;
@@ -232,7 +221,7 @@
             justify-content: center;
 
             button {
-                background-image: url("../../assets/images/adolfz.jpg");
+                background-image: url("");
                 background-position: 0 50%;
                 background-size: cover;
                 border-radius: 50%;

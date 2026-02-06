@@ -1,24 +1,36 @@
 import "./components/sidebar.js";
 
+// IMPORT FROM SERVICES API
 import {
     init_Google,
     init_OAuth_token
 } from "./services/oauth.js";
-
 import {
-    thumb_MyCha,
-    subsInfo,
-    likedVideos,
-    getIcon_likedVideos
+    data_iconsLIKED_videos,
+    data_thumb_MyCha,
+    data_subs,
+    data_likedVideos
 } from "./services/datas_API.js";
+
+// IMPORT FROM DOM DIRECTORY
+import {
+    setThumbMy,
+    setSubsThumb,
+    setVideosPlay,
+    setLogoChannel
+} from "./DOM/variables.js"
+import "./DOM/dom.js"
+
+
+
 
 /*===============================================
             ESTADO GLOBAL DO APP (UI)
 ==================================================*/
-let thumb_my;
-let subsThumb = new Object();
-let videosPlay = [];
-let logo_channel = [];
+let thumb;
+let subs = [];
+let videos = [];
+let logos = [];
 
 // BOOTSTRAP DO APP
 
@@ -31,21 +43,22 @@ function initApp(token) {
 // LOADERS
 
 async function loadMyChannel(token) {
-    thumb_my = await thumb_MyCha(token);
-    console.log("Minha thumb:", thumb_my);
+    thumb = await data_thumb_MyCha(token);
+    setThumbMy(thumb);
 }
 
 async function loadSubs(token) {
-    subsThumb = await subsInfo(token);
-    console.log("Inscrições:", subsThumb);
+    subs = await data_subs(token);
+    setSubsThumb(subs);
 }
 
 async function loadLikedVideos(token) {
-    videosPlay = await likedVideos(token);
-    logo_channel = await getIcon_likedVideos(token);
+    // APLICAÇÕES NA API DOS VÍDEOS GOSTADOS
+    videos = await data_likedVideos(token);
+    logos = await data_iconsLIKED_videos(token);
 
-    console.log("Vídeos:", videosPlay);
-    console.log("Logos:", logo_channel);
+    setVideosPlay(videos);
+    setLogoChannel(logos);
 }
 
 /* ================================
@@ -57,6 +70,10 @@ init_Google();
 init_OAuth_token((token) => {
     initApp(token);
 });
+
+/*=========================================================================
+PROCESSO DE INTERAÇÃO COM A DOM E RENDERIZAÇÃO DE COMPONENTES NA TELA
+===========================================================================*/
 
 
 

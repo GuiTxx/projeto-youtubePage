@@ -1,6 +1,6 @@
 const baseURL = "https://www.googleapis.com/youtube/v3/";
 
-export async function getChannelInfo(tokenClient) {
+export async function api_ChannelInfo(tokenClient) {
     try {
         const response = await fetch(`${baseURL}channels?part=snippet,contentDetails,statistics&mine=true`, {
             headers: {
@@ -18,7 +18,7 @@ export async function getChannelInfo(tokenClient) {
     }
 }
 
-export async function getChannelSubs(tokenClient) {
+export async function api_ChannelSubs(tokenClient) {
     try {
         const response = await fetch(`${baseURL}subscriptions?part=snippet&mine=true&maxResults=20`, {
             headers: {
@@ -36,7 +36,7 @@ export async function getChannelSubs(tokenClient) {
     }
 }
 
-export async function getLikedvideos(tokenClient) {
+export async function api_Likedvideos(tokenClient) {
     try {
         const response = await fetch(`${baseURL}videos?part=snippet,contentDetails&myRating=like&maxResults=50`, {
             headers: {
@@ -54,7 +54,7 @@ export async function getLikedvideos(tokenClient) {
     }
 }
 
-export async function getChannelIcon(token, channelId) {
+export async function api_ChannelData(token, channelId) {
     const response = await fetch(
         `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${channelId}`,
         {
@@ -68,4 +68,7 @@ export async function getChannelIcon(token, channelId) {
     const data = await response.json();
     return data;
 }
+
+// SEQUENCIA DE TRATAMENTO DA API
+// yotube_API_requests.js -> data_API.js -> main.js no LOADERS -> variables.js -> dom.js
 

@@ -19,9 +19,8 @@ export function init_Google() {
         });
 
         // Renderiza o botão do Google (funciona em HTTP local)
-        google.accounts.id.renderButton(
-            document.getElementById('buttonGoogle'),
-            {
+        document.querySelectorAll('.userLogin').forEach((container) => {
+            google.accounts.id.renderButton(container, {
                 theme: 'filled_black',
                 size: 'large',
                 text: 'signin',
@@ -29,8 +28,8 @@ export function init_Google() {
                 type: 'standard',
                 logo_alignment: 'left',
                 width: "100",
-            }
-        );
+            });
+        });
     }
 }
 
