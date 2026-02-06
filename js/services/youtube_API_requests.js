@@ -1,6 +1,5 @@
 const baseURL = "https://www.googleapis.com/youtube/v3/";
 
-
 export async function getChannelInfo(tokenClient) {
     try {
         const response = await fetch(`${baseURL}channels?part=snippet,contentDetails,statistics&mine=true`, {
