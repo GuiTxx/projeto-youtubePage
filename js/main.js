@@ -3,7 +3,8 @@ import "./components/sidebar.js";
 // IMPORT FROM SERVICES API
 import {
     init_Google,
-    init_OAuth_token
+    init_OAuth_token,
+    getStoredToken
 } from "./services/oauth.js";
 import {
     data_iconsLIKED_videos,
@@ -17,7 +18,8 @@ import {
     setThumbMy,
     setSubsThumb,
     setVideosPlay,
-    setLogoChannel
+    setLogoChannel,
+    setIDChannel
 } from "./DOM/variables.js"
 
 import "./DOM/dom.js"
@@ -28,7 +30,8 @@ import "./DOM/dom.js"
 /*===============================================
             ESTADO GLOBAL DO APP (UI)
 ==================================================*/
-let thumb;
+let thumb_Url;
+let id_Channel;
 let subs = [];
 let videos = [];
 let logos = [];
@@ -44,8 +47,9 @@ function initApp(token) {
 // LOADERS
 
 async function loadMyChannel(token) {
-    thumb = await data_thumb_MyCha(token);
-    setThumbMy(thumb);
+    ({ thumb_Url, id_Channel } = await data_thumb_MyCha(token));
+    setThumbMy(thumb_Url);
+    setIDChannel(id_Channel);
 }
 
 async function loadSubs(token) {
@@ -61,20 +65,25 @@ async function loadLikedVideos(token) {
     setVideosPlay(videos);
     setLogoChannel(logos);
 }
-
+function checkTokenValidity() {
+    const token = getStoredToken();
+    if(token){
+        console.log("Usuário já autenticado, token válido!");
+        initApp(token);
+    } else {
+        console.log("Token ausente ou expirado, solicitando autenticação...");
+    }
+}
 /* ================================
    OAUTH FLOW
 ================================ */
+checkTokenValidity();
 
 init_Google();
 
 init_OAuth_token((token) => {
     initApp(token);
 });
-
-/*=========================================================================
-PROCESSO DE INTERAÇÃO COM A DOM E RENDERIZAÇÃO DE COMPONENTES NA TELA
-===========================================================================*/
 
 
 

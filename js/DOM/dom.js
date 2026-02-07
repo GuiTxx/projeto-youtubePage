@@ -6,6 +6,7 @@ function esperarDados() {
         const interval = setInterval(() => {
             if (
                 appData.thumb_my != null &&
+                appData.id_channel != null &&
                 appData.subsThumb.length > 0 &&
                 appData.videosPlay.length > 0 &&
                 appData.logo_channel.length > 0
@@ -13,6 +14,7 @@ function esperarDados() {
                 clearInterval(interval);
                 resolve({
                     thumb_my: appData.thumb_my,
+                    id_channel: appData.id_channel,
                     subsThumb: appData.subsThumb,
                     videosPlay: appData.videosPlay,
                     logo_channel: appData.logo_channel
@@ -99,25 +101,25 @@ function you_section(){
     `
     ul_YOU.innerHTML = `
     <li>
-        <a href="#">
+        <a href="https://www.youtube.com/feed/history">
             <img src="/assets/icons/geral/historico_Search.svg" alt="Ícone Histórico">
             <span>Histórico</span>
         </a>
     </li>
     <li>
-        <a href="#">
+        <a href="https://www.youtube.com/feed/playlists">
             <img src="/assets/icons/geral/playlist.svg" alt="Ícone playlist">
             <span>Playlist</span>
         </a>
     </li>
     <li>
-        <a href="#">
+        <a href="https://www.youtube.com/playlist?list=WL">
             <img src="/assets/icons/unfilled/watchLater_Unfilled.svg" alt="Ícone assistir mais tarde">
             <span>Assistir mais tarde</span>
         </a>
     </li>
     <li>
-        <a href="#">
+        <a href="https://www.youtube.com/playlist?list=LL">
             <img src="/assets/icons/unfilled/Liked_videoUnfilled.svg" alt="Ícone vídeos curtidos">
             <span>Vídeos com "Gostei"</span>
         </a>
@@ -223,10 +225,16 @@ function subs_section(result) {
     
 }
 
+function applyLink_channelID(result) {
+    const ytb_studio = document.querySelector(".moreYoutube #studio");
+    ytb_studio.setAttribute("href", `https://studio.youtube.com/channel/${result.id_channel}`)
+}
+
 function DOM_change(result) {
     create_Button(result);
     you_section();
     subs_section(result);
+    applyLink_channelID(result);
 }
 
 pegaDados();

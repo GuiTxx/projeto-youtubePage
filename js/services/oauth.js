@@ -43,7 +43,25 @@ export function init_OAuth_token(onsuccess) {
                 console.error('Error fetching access token: ' + response.error);
                 return;
             }
+            const expiresAt = Date.now()+ response.expires_in * 1000;
+            localStorage.setItem('ytb_access_token', response.access_token);
+            localStorage.setItem('access_expires_at', expiresAt);
             onsuccess(response.access_token);
         },
     });
+}
+
+export function getStoredToken() {
+    const token = localStorage.getItem('ytb_access_token');
+    const expiresAt = localStorage.getItem('access_expires_at');
+
+    if (!token || !expiresAt) return null;
+
+    if (Date.now() > Number(expiresAt)) {
+        localStorage.removeItem('ytb_access_token');
+        localStorage.removeItem('access_expires_at');
+        return null;
+    }
+
+    return token;
 }

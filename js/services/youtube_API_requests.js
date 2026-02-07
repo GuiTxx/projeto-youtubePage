@@ -10,6 +10,7 @@ export async function api_ChannelInfo(tokenClient) {
         });
 
         const dataID = await response.json();
+        console.log("Dados do canal do usuário:", dataID);
         return dataID;
 
     } catch (error) {

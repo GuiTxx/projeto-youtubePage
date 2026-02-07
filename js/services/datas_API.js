@@ -10,7 +10,9 @@ import {
 
 export async function data_thumb_MyCha(token) {
     const data = await api_ChannelInfo(token);
-    return data.items[0].snippet.thumbnails.default.url;
+    const thumb_Url = data.items[0].snippet.thumbnails.default.url;
+    const id_Channel = data.items[0].id;
+    return { thumb_Url, id_Channel };
 }
 
 export async function data_subs(token) {
