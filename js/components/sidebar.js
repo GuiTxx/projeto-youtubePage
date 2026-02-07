@@ -1,39 +1,15 @@
 // PROPRIEDADES ESPECIFICAS DO BUTTON MORE DA EXPLORE
-const button_explore = document.getElementById("button_explore");
-const ul_explore = document.getElementById("ul_explore");
+const getExploreElements = () => ({
+    button_explore: document.getElementById("button_explore"),
+    ul_explore: document.getElementById("ul_explore")
+});
 
-// PROPRIEDADES ESPECIFICAS DO BUTTON MORE DA YOU
-const button_you = document.getElementById("button_you");
-const ul_you = document.getElementById("ul_you");
-
-let moreSubs = document.createElement("div");
 let moreYou = document.createElement("div");
 let moreExplore = document.createElement("div");
 
 
 
 // Conteúdeo HTML das funções de mostrar mais na sidebar
-moreSubs.innerHTML = `
-<li>
-    <a href="#">
-        <span></span>
-        <h3>Trix 3D</h3>
-    </a>
-</li>
-<li>
-    <a href="#">
-        <span></span>
-        <h3>Mingau</h3>
-    </a>
-</li>
-<li>
-    <a href="#">
-        <span></span>
-        <h3>Google</h3>
-    </a>
-</li>
-`;
-
 moreYou.innerHTML = `
 <li>
     <a href="#">
@@ -84,68 +60,122 @@ moreExplore.innerHTML = `
 `;
 
 // Ações dos Botões "Mostrar Mais" localizados na sideBar
-// button_more[0].addEventListener("click", () => {
 
-//     listSide[0].classList.toggle("expanded");
 
-//     if (listSide[0].classList.contains("expanded")) {
-//         listSide[0].appendChild(moreSubs);
-//         const imgElement = button_more[0].querySelector("img");
+export function moreButton_SUBS() {
+    const button_subs = document.getElementById("button_subs");
+    const ul_subs = document.getElementById("lista_Inscritos");
+    const subscription_nav = document.querySelector(".subs_Nav");
 
-//         if (imgElement) {
-//             imgElement.src = "./assets/icons/geral/arrow_Up.svg";
-//         }
-//     }else{
-//         listSide[0].removeChild(moreSubs);
-//         const imgElement = button_more[0].querySelector("img");
+    if (!button_subs || !ul_subs || !subscription_nav) {
+        return;
+    }
 
-//         if (imgElement) {
-//             imgElement.src = "./assets/icons/geral/arrow_Down.svg";
-//         }
-//     }
-// })
+    button_subs.addEventListener("click", () => {
+        ul_subs.classList.toggle("expanded");
+
+        if (ul_subs.classList.contains("expanded")) {
+            // quero retirar o style max-height para mostrar a lista completa de inscritos
+            subscription_nav.style.maxHeight = 'none';
+            const imgElement = button_subs.querySelector("img");
+            const h2Element = button_subs.querySelector("h2");
+
+            if (imgElement) {
+                imgElement.src = "./assets/icons/geral/arrow_Up.svg";
+            }
+            if (h2Element) {
+                h2Element.textContent = "Mostrar menos";
+            }
+        } else {
+            const maxHeight = window.getComputedStyle(subscription_nav).maxHeight;
+            if (maxHeight === 'none') {
+                subscription_nav.style.maxHeight = '360px';
+            }
+            const imgElement = button_subs.querySelector("img");
+
+            if (imgElement) {
+                imgElement.src = "./assets/icons/geral/arrow_Down.svg";
+            }
+            const h2Element = button_subs.querySelector("h2");
+            if (h2Element) {
+                h2Element.textContent = "Mostrar mais";
+            }
+        }
+    });
+}
 
 export function moreButton_YOU() {
-    button_you.addEventListener("click", () => {
+    const button_you = document.getElementById("button_you");
+    const ul_you = document.getElementById("ul_you");
 
+    if (!button_you || !ul_you) {
+        return;
+    }
+
+    button_you.addEventListener("click", () => {
         ul_you.classList.toggle("expanded");
 
         if (ul_you.classList.contains("expanded")) {
             ul_you.appendChild(moreYou);
             const imgElement = button_you.querySelector("img");
+            const h2Element = button_you.querySelector("h2");
+
+            if (h2Element) {
+                h2Element.textContent = "Mostrar menos";
+            }
 
             if (imgElement) {
                 imgElement.src = "./assets/icons/geral/arrow_Up.svg";
             }
         } else {
-            ul_you.removeChild(moreYou);
+            if (ul_you.contains(moreYou)) {
+                ul_you.removeChild(moreYou);
+            }
             const imgElement = button_you.querySelector("img");
+            const h2Element = button_you.querySelector("h2");
+
+            if (h2Element) {
+                h2Element.textContent = "Mostrar mais";
+            }
 
             if (imgElement) {
                 imgElement.src = "./assets/icons/geral/arrow_Down.svg";
             }
         }
-    })
+    });
 }
 
+const { button_explore, ul_explore } = getExploreElements();
+if (button_explore && ul_explore) {
+    button_explore.addEventListener("click", () => {
+        ul_explore.classList.toggle("expanded");
 
-button_explore.addEventListener("click", () => {
+        if (ul_explore.classList.contains("expanded")) {
+            ul_explore.appendChild(moreExplore);
+            const imgElement = button_explore.querySelector("img");
+            const h2Element = button_explore.querySelector("h2");
 
-    ul_explore.classList.toggle("expanded");
+            if (h2Element) {
+                h2Element.textContent = "Mostrar menos";
+            }
 
-    if (ul_explore.classList.contains("expanded")) {
-        ul_explore.appendChild(moreExplore);
-        const imgElement = button_explore.querySelector("img");
+            if (imgElement) {
+                imgElement.src = "./assets/icons/geral/arrow_Up.svg";
+            }
+        } else {
+            if (ul_explore.contains(moreExplore)) {
+                ul_explore.removeChild(moreExplore);
+            }
+            const imgElement = button_explore.querySelector("img");
+            const h2Element = button_explore.querySelector("h2");
 
-        if (imgElement) {
-            imgElement.src = "./assets/icons/geral/arrow_Up.svg";
+            if (h2Element) {
+                h2Element.textContent = "Mostrar mais";
+            }
+
+            if (imgElement) {
+                imgElement.src = "./assets/icons/geral/arrow_Down.svg";
+            }
         }
-    } else {
-        ul_explore.removeChild(moreExplore);
-        const imgElement = button_explore.querySelector("img");
-
-        if (imgElement) {
-            imgElement.src = "./assets/icons/geral/arrow_Down.svg";
-        }
-    }
-})
+    });
+}

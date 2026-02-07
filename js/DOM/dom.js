@@ -1,5 +1,5 @@
 import { appData } from "./variables.js";
-import { moreButton_YOU } from "../components/sidebar.js";
+import { moreButton_YOU, moreButton_SUBS } from "../components/sidebar.js";
 
 function esperarDados() {
     return new Promise(resolve => {
@@ -29,23 +29,17 @@ async function pegaDados() {
     DOM_change(result);
 }
 
-pegaDados();
-
-// function DOM_change(result){}
-
-
-
-
-
+// FUNÇÕES DE MUDANÇA NO DOM APÓS O LOGIN
 
 function create_Button(result) {
     // ÁREA DE LOGIN QUE TEM BOTÃO GOOGLE E TRES PONTOS
     const login_Area = document.querySelector(".loginAccount");
+    if (!login_Area) {
+        return;
+    }
 
     // CRIAR O BOTÃO DE CRIAR E PERFIL DO USUÁRIO
     const criar_Button = document.createElement("div");
-    const userProfileButton = criar_Button.querySelector(".userProfile button");
-
     login_Area.innerHTML = ""
 
     // LOAD DO BOTÃO DE CRIAR E PERFIL
@@ -65,12 +59,17 @@ function create_Button(result) {
         </div>
     </div>
     `
-    userProfileButton.style.backgroundImage = `url(${result.thumb_my})`;
+    login_Area.replaceChildren(criar_Button);
 
-    login_Area.innerHTML = criar_Button.innerHTML;
+    const userProfileButton = login_Area.querySelector(".userProfile button");
+    if (userProfileButton) {
+        userProfileButton.style.backgroundImage = `url(${result.thumb_my})`;
+    }
 }
 
 function you_section(){
+    // SUBS NAV
+    const subs_nav = document.querySelector(".subs_Nav");
     // PEGAR AS LI'S DA MAIN NAV
     const li_mainNAV = Array.from(document.querySelectorAll(".main_Navegation li"));
     // PAI DA YOU
@@ -138,6 +137,8 @@ function you_section(){
     `
 
     hr[1].style.opacity = "1";
+    container_YOU.style.padding = "12px";
+    subs_nav.style.padding = "12px";
 
     // ADICIONANDO AO PAI
     container_YOU.appendChild(title_YOU);
@@ -185,31 +186,50 @@ function subs_section(result) {
     div_SUBSnav[4].classList.add("subs");
 
     // RENDERIZAR AS INSCRIÇÕES DO USUÁRIO
-    Object.entries(result.subsThumb).forEach(canal_data => {
+    result.subsThumb.forEach((canal_data) => {
         const item = document.createElement("li");
+        const channelUrl = canal_data.custom_url || "#";
 
         item.innerHTML = `
-        <a href="${canal_data.custom_url}">
+        <a href="${channelUrl}">
             <span></span>
             <h3>${canal_data.nome}</h3>
         </a>
         `
         //ACESSAR O ELEMENTO SPAN PARA APLICAR O BACKGROUND DE CADA CANAL
         const span = item.querySelector("span");
-        span.style.backgroundImage = `url(${canal_data.logo})`;
+        if (canal_data.logo) {
+            span.style.backgroundImage = `url(${canal_data.logo})`;
+        }
 
         list.appendChild(item);
     })
 
     // RENDERIZAR O BOTÃO DE VER MAIS INSCRIÇÕES
     more_subs.innerHTML = `
-    <button class="more_views">
+    <button id="button_subs">
         <img src="/assets/icons/geral/arrow_Down.svg" alt="Ícone de seta para baixo">
         <h2>Mostrar mais</h2>
     </button>
     `
     nav_subs.appendChild(more_subs)
+
+    nav_subs.style.position = "relative"
+    more_subs.style.position = "absolute"
+    more_subs.style.bottom = "0"
+    list.style.paddingBottom = "28px"
+    
+    moreButton_SUBS();
+    
 }
+
+function DOM_change(result) {
+    create_Button(result);
+    you_section();
+    subs_section(result);
+}
+
+pegaDados();
 
 
 
