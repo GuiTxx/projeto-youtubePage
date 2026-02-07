@@ -1,5 +1,10 @@
-const button_more = document.getElementsByClassName("more_views");
-const listSide = document.getElementsByClassName("list_sidebar");
+// PROPRIEDADES ESPECIFICAS DO BUTTON MORE DA EXPLORE
+const button_explore = document.getElementById("button_explore");
+const ul_explore = document.getElementById("ul_explore");
+
+// PROPRIEDADES ESPECIFICAS DO BUTTON MORE DA YOU
+const button_you = document.getElementById("button_you");
+const ul_you = document.getElementById("ul_you");
 
 let moreSubs = document.createElement("div");
 let moreYou = document.createElement("div");
@@ -100,42 +105,45 @@ moreExplore.innerHTML = `
 //     }
 // })
 
-button_more[0].addEventListener("click", () => {
+export function moreButton_YOU() {
+    button_you.addEventListener("click", () => {
 
-    listSide[0].classList.toggle("expanded");
+        ul_you.classList.toggle("expanded");
 
-    if (listSide[0].classList.contains("expanded")) {
-        listSide[0].appendChild(moreYou);
-        const imgElement = button_more[0].querySelector("img");
+        if (ul_you.classList.contains("expanded")) {
+            ul_you.appendChild(moreYou);
+            const imgElement = button_you.querySelector("img");
+
+            if (imgElement) {
+                imgElement.src = "./assets/icons/geral/arrow_Up.svg";
+            }
+        } else {
+            ul_you.removeChild(moreYou);
+            const imgElement = button_you.querySelector("img");
+
+            if (imgElement) {
+                imgElement.src = "./assets/icons/geral/arrow_Down.svg";
+            }
+        }
+    })
+}
+
+
+button_explore.addEventListener("click", () => {
+
+    ul_explore.classList.toggle("expanded");
+
+    if (ul_explore.classList.contains("expanded")) {
+        ul_explore.appendChild(moreExplore);
+        const imgElement = button_explore.querySelector("img");
 
         if (imgElement) {
             imgElement.src = "./assets/icons/geral/arrow_Up.svg";
         }
-    }else{
-        listSide[0].removeChild(moreYou);
-        const imgElement = button_more[0].querySelector("img");
-        
-        if (imgElement) {
-            imgElement.src = "./assets/icons/geral/arrow_Down.svg";
-        }
-    }
-})
+    } else {
+        ul_explore.removeChild(moreExplore);
+        const imgElement = button_explore.querySelector("img");
 
-button_more[1].addEventListener("click", () => {
-
-    listSide[1].classList.toggle("expanded");
-
-    if (listSide[1].classList.contains("expanded")) {
-        listSide[1].appendChild(moreExplore);
-        const imgElement = button_more[1].querySelector("img");
-
-        if (imgElement) {
-            imgElement.src = "./assets/icons/geral/arrow_Up.svg";
-        }
-    }else{
-        listSide[1].removeChild(moreExplore);
-        const imgElement = button_more[1].querySelector("img");
-        
         if (imgElement) {
             imgElement.src = "./assets/icons/geral/arrow_Down.svg";
         }

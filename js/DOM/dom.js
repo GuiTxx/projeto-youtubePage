@@ -1,4 +1,5 @@
 import { appData } from "./variables.js";
+import { moreButton_YOU } from "../components/sidebar.js";
 
 function esperarDados() {
     return new Promise(resolve => {
@@ -67,6 +68,83 @@ function create_Button(result) {
     userProfileButton.style.backgroundImage = `url(${result.thumb_my})`;
 
     login_Area.innerHTML = criar_Button.innerHTML;
+}
+
+function you_section(){
+    // PEGAR AS LI'S DA MAIN NAV
+    const li_mainNAV = Array.from(document.querySelectorAll(".main_Navegation li"));
+    // PAI DA YOU
+    const container_YOU = document.querySelector('.user_YOU');
+    // CRIANDO OS ELEMENTOS DA SEÇÃO VOCÊ
+    const hr = Array.from(document.querySelectorAll('.division'));
+    const title_YOU = document.createElement("div");
+    const ul_YOU = document.createElement('ul');
+    const more_YOU = document.createElement('div');
+
+    // EXCLUINDO AS LI'S DA MAIN NAV (INCRIÇÕES, VOCÊ, HISTÓRICO)
+    li_mainNAV[2].remove();
+    li_mainNAV[3].remove();
+    li_mainNAV[4].remove();
+
+    // SETANDO ATRIBUTOS DOS ELEMENTOS
+    title_YOU.classList.add("user_data");
+    ul_YOU.setAttribute("id","ul_you");
+    more_YOU.classList.add("moreInfo");
+
+    // ADICIONANDO O HTML A CADA ATRIBUTO
+    title_YOU.innerHTML = `
+    <a href="#">
+        <h2>Você</h2>
+        <img src="/assets/icons/geral/arrow_Right.svg" alt="Ícone de seta para direita">
+    </a>
+    `
+    ul_YOU.innerHTML = `
+    <li>
+        <a href="#">
+            <img src="/assets/icons/geral/historico_Search.svg" alt="Ícone Histórico">
+            <span>Histórico</span>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <img src="/assets/icons/geral/playlist.svg" alt="Ícone playlist">
+            <span>Playlist</span>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <img src="/assets/icons/unfilled/watchLater_Unfilled.svg" alt="Ícone assistir mais tarde">
+            <span>Assistir mais tarde</span>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <img src="/assets/icons/unfilled/Liked_videoUnfilled.svg" alt="Ícone vídeos curtidos">
+            <span>Vídeos com "Gostei"</span>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <img src="/assets/icons/unfilled/myVideos_unfilled.svg" alt="Ícone meus Vídeos">
+            <span>Seus vídeos</span>
+        </a>
+    </li>
+    `
+    more_YOU.innerHTML = `
+    <button id="button_you">
+        <img src="/assets/icons/geral/arrow_Down.svg" alt="Ícone de seta para baixo">
+        <h2>Mostrar mais</h2>
+    </button>
+    `
+
+    hr[1].style.opacity = "1";
+
+    // ADICIONANDO AO PAI
+    container_YOU.appendChild(title_YOU);
+    container_YOU.appendChild(ul_YOU);
+    container_YOU.appendChild(more_YOU);
+
+    moreButton_YOU();
 }
 
 function subs_section(result) {
