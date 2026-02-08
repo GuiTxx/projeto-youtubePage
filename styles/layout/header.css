@@ -25,6 +25,10 @@
                 height: 24px;
             }
         }
+        #hamburguer_Icon:hover{
+            background-color: #303030;
+            border-radius: 50%;
+        }
 
         #youtube_Logo {
             display: flex;
