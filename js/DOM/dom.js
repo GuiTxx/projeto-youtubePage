@@ -1,7 +1,7 @@
 import { appData } from "./variables.js";
 import { moreButton_YOU, moreButton_SUBS } from "../components/sidebar.js";
 
-function esperarDados() {
+export function esperarDados() {
     return new Promise(resolve => {
         const interval = setInterval(() => {
             if (
@@ -25,7 +25,7 @@ function esperarDados() {
     });
 }
 
-async function pegaDados() {
+export async function pegaDados() {
     const result = await esperarDados();
     console.log("Dados chegaram", result)
     DOM_change(result);
