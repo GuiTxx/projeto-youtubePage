@@ -43,6 +43,9 @@ const hamburguer_button = document.getElementById("hamburguer_Icon");
 // APLICO A LÓGICA DE TROCA DE SIDEBAR, COM MEDIA QUERY PARA MUDAR O LAYOUT CONFORME O TAMANHO DA TELA.
 const mediaQuery = window.matchMedia("(max-width: 1310px)");
 
+// PEGANDO O HEADER LEFT PARA DAR UM MARGIN LEFT QUANDO A SIDEBAR ESTIVER EXPANDIDA
+const header_left = document.querySelector(".left_Menu");
+
 function ensureFatSidebarInDom() {
     if (!aside_container.contains(sideBar_fat)) {
         aside_container.appendChild(sideBar_fat);
@@ -60,6 +63,7 @@ function setSmallLayout() {
     ensureSlimSidebarInDom();
     sideBar_fat.classList.remove("expanded");
     sideBar_fat.style.transform = "translateX(-100%)";
+    header_left.style.marginLeft = "0px";
 }
 
 function setLargeLayout() {
@@ -67,6 +71,8 @@ function setLargeLayout() {
     sideBar_fat.style.transform = "";
     aside_container.classList.remove("aside_slim", "aside_changeMODE");
     aside_container.classList.add("sideBar");
+    // ADICIONA MARGIN LEFT AO HEADER QUANDO A SIDEBAR ESTIVER EXPANDIDA
+    header_left.style.marginLeft = "10px";
     if (aside_container.contains(sideBar_slim)) {
         aside_container.removeChild(sideBar_slim);
     }
