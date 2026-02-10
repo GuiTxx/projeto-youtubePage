@@ -238,3 +238,35 @@
     }
 
 }
+
+@media (max-width: 650px) {
+    .container_Header .middle_Content {
+        width: auto;
+        justify-content: flex-end;
+        margin-left: auto;
+    }
+
+    .container_Header .middle_Content .search_Bar,
+    .container_Header .middle_Content #keyboard_Search,
+    .container_Header .audioSearch {
+        display: none;
+    }
+
+    .container_Header .middle_Content .searchButton button {
+        background-color: transparent;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    .container_Header .middle_Content .searchButton button img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .container_Header .middle_Content .searchButton button:hover {
+        background-color: #303030;
+    }
+}

@@ -42,6 +42,7 @@ const hamburguer_button = document.getElementById("hamburguer_Icon");
 
 // APLICO A LÓGICA DE TROCA DE SIDEBAR, COM MEDIA QUERY PARA MUDAR O LAYOUT CONFORME O TAMANHO DA TELA.
 const mediaQuery = window.matchMedia("(max-width: 1310px)");
+const mobileQuery = window.matchMedia("(max-width: 650px)");
 
 // PEGANDO O HEADER LEFT PARA DAR UM MARGIN LEFT QUANDO A SIDEBAR ESTIVER EXPANDIDA
 const header_left = document.querySelector(".left_Menu");
@@ -64,6 +65,18 @@ function setSmallLayout() {
     sideBar_fat.classList.remove("expanded");
     sideBar_fat.style.transform = "translateX(-100%)";
     header_left.style.marginLeft = "0px";
+}
+
+function setMobileLayout() {
+    sideBar_fat.classList.remove("expanded");
+    sideBar_fat.style.transform = "";
+    aside_container.classList.remove("aside_slim", "aside_changeMODE", "aside_mobile_open");
+    aside_container.classList.add("sideBar");
+    header_left.style.marginLeft = "0px";
+    if (aside_container.contains(sideBar_slim)) {
+        aside_container.removeChild(sideBar_slim);
+    }
+    ensureFatSidebarInDom();
 }
 
 function setLargeLayout() {
@@ -94,6 +107,13 @@ function toggleSmallLayout() {
     }
 }
 
+function toggleMobileLayout() {
+    aside_container.classList.toggle("aside_mobile_open");
+    if (aside_container.classList.contains("aside_mobile_open")) {
+        ensureFatSidebarInDom();
+    }
+}
+
 function toggleLargeLayout() {
     aside_container.classList.toggle("aside_changeMODE");
 
@@ -118,6 +138,11 @@ function toggleLargeLayout() {
 }
 
 function handleScreenChange(e) {
+    if (mobileQuery.matches) {
+        setMobileLayout();
+        return;
+    }
+
     if (e.matches) {
         setSmallLayout();
     } else {
@@ -126,6 +151,11 @@ function handleScreenChange(e) {
 }
 
 hamburguer_button.addEventListener("click", () => {
+    if (mobileQuery.matches) {
+        toggleMobileLayout();
+        return;
+    }
+
     if (mediaQuery.matches) {
         toggleSmallLayout();
     } else {
@@ -137,6 +167,7 @@ handleScreenChange(mediaQuery);
 
 // ADICIONA O LISTENER PARA MUDANÇA DE TELA
 mediaQuery.addEventListener('change', handleScreenChange);
+mobileQuery.addEventListener('change', handleScreenChange);
 
 
 

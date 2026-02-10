@@ -526,6 +526,27 @@
     }
 }
 
+@media (max-width: 650px) {
+    .hero_Screen .sideBar {
+        width: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .hero_Screen .sideBar .sideBar_items {
+        transform: translateX(-100%);
+    }
+
+    .hero_Screen .sideBar.aside_mobile_open {
+        width: 250px;
+        padding: 0 8px;
+    }
+
+    .hero_Screen .sideBar.aside_mobile_open .sideBar_items {
+        transform: translateX(0);
+    }
+}
+
 .aside_slim {
     width: 64px;
     min-width: 64px;
