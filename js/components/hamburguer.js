@@ -101,6 +101,7 @@ function toggleLargeLayout() {
         if (aside_container.classList.contains("sideBar")) {
             aside_container.classList.replace("sideBar", "aside_slim");
             aside_container.replaceChildren(sideBar_slim);
+            header_left.style.marginLeft = "0px";
         } else {
             console.log("A classe sideBar não voltou ainda ao normal.");
         }
@@ -110,6 +111,7 @@ function toggleLargeLayout() {
     if (aside_container.classList.contains("aside_slim")) {
         aside_container.classList.replace("aside_slim", "sideBar");
         aside_container.replaceChildren(sideBar_fat);
+        header_left.style.marginLeft = "10px";
     } else {
         console.log("A classe sideBar não voltou ainda ao normal.");
     }

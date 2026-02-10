@@ -1,6 +1,7 @@
 import "./components/sidebar.js";
 import "./components/hamburguer.js"
 import "./components/videoCard.js"
+import "./components/search.js"
 
 // IMPORT FROM SERVICES API
 import {
