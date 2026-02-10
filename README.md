@@ -55,12 +55,12 @@ Simular a experiência do YouTube e treinar JavaScript na prática, com foco em 
 
 ```
 .
+├─ .git/
+├─ .gitignore
 ├─ .vscode/
 │  └─ settings.json
 ├─ assets/
 │  ├─ favicon/
-│  │  ├─ favicon-16x16.png
-│  │  ├─ favicon-32x32.png
 │  │  └─ favicon.ico
 │  ├─ icons/
 │  │  ├─ filled/
@@ -123,15 +123,6 @@ Simular a experiência do YouTube e treinar JavaScript na prática, com foco em 
 │  │     ├─ sports_unfilled.svg
 │  │     ├─ subscription_unfilled.svg
 │  │     └─ watchLater_Unfilled.svg
-│  ├─ images/
-│  │  ├─ 3d_PrintAcademy.jpg
-│  │  ├─ adolfz.jpg
-│  │  ├─ alura.jpg
-│  │  ├─ manualMundo.jpg
-│  │  ├─ oPrimo.jpg
-│  │  ├─ padre_Paulo.jpg
-│  │  ├─ padre_Reginaldo.jpg
-│  │  └─ tucano.webp
 │  └─ logo-Header/
 │     └─ youtube.svg
 ├─ js/
@@ -145,8 +136,6 @@ Simular a experiência do YouTube e treinar JavaScript na prática, com foco em 
 │  ├─ DOM/
 │  │  ├─ dom.js
 │  │  └─ variables.js
-│  ├─ pages/
-│  │  └─ home.js
 │  ├─ services/
 │  │  ├─ datas_API.js
 │  │  ├─ oauth.js
@@ -157,15 +146,12 @@ Simular a experiência do YouTube e treinar JavaScript na prática, com foco em 
 │  │  ├─ global.css
 │  │  ├─ reset.css
 │  │  └─ variables.css
-│  ├─ components/
-│  │  └─ video-card.css
 │  └─ layout/
 │     ├─ filters.css
 │     ├─ header.css
 │     ├─ sidebar.css
 │     ├─ sidebarSLIM.css
 │     └─ video-grid.css
-├─ credentials.json
 ├─ index.html
 └─ README.md
 ```
