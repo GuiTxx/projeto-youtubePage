@@ -40,11 +40,7 @@ export async function data_likedVideos(token) {
         title_channel: element.snippet.channelTitle,
         title_video: element.snippet.localized?.title ?? element.snippet.title,
         publi_date: element.snippet.publishedAt,
-        thumb_video:
-            element.snippet.thumbnails?.standard?.url ||
-            element.snippet.thumbnails?.high?.url ||
-            element.snippet.thumbnails?.medium?.url ||
-            element.snippet.thumbnails?.default?.url
+        thumb_video: element.snippet.thumbnails.high.url
     }));
 }
 

@@ -78,38 +78,45 @@ function videos_Load(result) {
 
     result.videosPlay.forEach(element => {
         videos_insert_Main.innerHTML += `
-        <a href = "${element.url}">
-            <div class="thumb_main" style="background-image: url('${element.thumb_video}');">
-                <span>${formatDuration(element.duration)}</span>
-            </div>
-
-            <div class = "legenda_main">
-
-                <div class = "logo_canal">
-                    <span><!-- AQUI FICARÁ A LOGO DO CANAL --></span>
+        <div class="video_Card">
+            <a href = "${element.url}">
+                <div class="thumb_main">
+                    <span class = "thumb_video_liked" style="background-image: url(${element.thumb_video})"> <!-- AQUI FICARÁ A THUMBNAIL --></span>
+                    <span>${formatDuration(element.duration)}</span>
                 </div>
 
-                <div class = "descritivo_video">
-                    <h2>${element.title_video}</h2>
-                    <span>${element.title_channel}</span>
+                <div class = "legenda_main">
 
-                    <div class= "view_time">
-                        <span>2 mil views ·</span>
-                        <span>${timeAgo(element.publi_date)}</span>
+                    <div class = "logo_canal">
+                        <span class= "logo_canal_liked"><!-- AQUI FICARÁ A LOGO DO CANAL --></span>
+                    </div>
+
+                    <div class = "descritivo_video">
+                        <h2>${element.title_video}</h2>
+                        <span>${element.title_channel}</span>
+
+                        <div class= "view_time">
+                            <span>2 mil views · ${timeAgo(element.publi_date)}</span>
+                        </div>
+                    </div>
+
+                    <div class = "tres_pontinhos">
+                        <button id = "mais_opcoes">
+                            <img src="/assets/icons/geral/tres_points.svg" alt="Mais opções Ícone">
+                        </button>
                     </div>
                 </div>
 
-                <div class = "tres_pontinhos">
-                    <button id = "mais_opcoes">
-                        <img src="/assets/icons/geral/tres_points.svg" alt="Mais opções Ícone">
-                    </button>
-                </div>
-            </div>
 
-
-        </a>
-
+            </a>
+        </div>
         `
+        const logo_canal_liked = videos_insert_Main.querySelectorAll(".logo_canal_liked");
+        const index = Array.from(logo_canal_liked).length - 1;
+        if (result.logo_channel[index]) {
+            logo_canal_liked[index].style.backgroundImage = `url(${result.logo_channel[index]})`;
+        }
+
     });
 
     videos_Main.appendChild(videos_insert_Main);
