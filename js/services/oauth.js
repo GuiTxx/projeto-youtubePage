@@ -1,10 +1,18 @@
 let tokenClient;
+let tokenCallback;
 
 export function credentials_of_User(response) {
     const data = jwt_decode(response.credential);
     console.log(data);
 
     if (data.email_verified) {
+        if (!tokenClient) {
+            if (typeof tokenCallback !== 'function') {
+                console.error('OAuth token client not initialized. Call init_OAuth_token first.');
+                return;
+            }
+            init_OAuth_token(tokenCallback);
+        }
         tokenClient.requestAccessToken({ prompt: 'consent' });
     } else {
         alert('Verifique o seu Email e tente novamente!')
@@ -35,6 +43,7 @@ export function init_Google() {
 
 // Inicializa o cliente OAuth 2.0, pegando o token de acesso
 export function init_OAuth_token(onsuccess) {
+    tokenCallback = onsuccess;
     tokenClient = google.accounts.oauth2.initTokenClient({
         client_id: '1081628126061-h5pa6ehoer6emk7pq6qm1ctbsnntrsim.apps.googleusercontent.com',
         scope: 'https://www.googleapis.com/auth/youtube.readonly',
