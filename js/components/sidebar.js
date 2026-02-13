@@ -13,7 +13,7 @@ let moreExplore = document.createElement("div");
 moreYou.innerHTML = `
 <li>
     <a href="https://www.youtube.com/feed/clips">
-        <img src="/assets/icons/geral/clips_Youtube.svg" alt="Ícone meus Clipes">
+        <img src="./assets/icons/geral/clips_Youtube.svg" alt="Ícone meus Clipes">
         <span>Clipes</span>
     </a>
 </li>
@@ -23,37 +23,37 @@ moreYou.innerHTML = `
 moreExplore.innerHTML = `
 <li>
     <a href="https://www.youtube.com/channel/UC4R8DWoMoI7CAwX8_LjQHig">
-        <img src="/assets/icons/unfilled/live_unfilled.svg" alt="Ícone Ao vivo">
+        <img src="./assets/icons/unfilled/live_unfilled.svg" alt="Ícone Ao vivo">
         <span>Ao vivo</span>
     </a>
 </li>
 <li>
     <a href="https://www.youtube.com/gaming">
-        <img src="/assets/icons/unfilled/games_unfilled.svg" alt="Ícone Jogos">
+        <img src="./assets/icons/unfilled/games_unfilled.svg" alt="Ícone Jogos">
         <span>Jogos</span>
     </a>
 </li>
 <li>
     <a href="https://www.youtube.com/channel/UCYfdidRxbB8Qhf0Nx7ioOYw">
-        <img src="/assets/icons/unfilled/news_unfilled.svg" alt="Ícone Notícias">
+        <img src="./assets/icons/unfilled/news_unfilled.svg" alt="Ícone Notícias">
         <span>Notícias</span>
     </a>
 </li>
 <li>
     <a href="https://www.youtube.com/channel/UCEgdi0XIXXZ-qJOFPf4JSKw">
-        <img src="/assets/icons/unfilled/sports_unfilled.svg" alt="Ícone Esportes">
+        <img src="./assets/icons/unfilled/sports_unfilled.svg" alt="Ícone Esportes">
         <span>Esportes</span>
     </a>
 </li>
 <li>
     <a href="https://www.youtube.com/feed/courses_destination">
-        <img src="/assets/icons/unfilled/school_unfilled.svg" alt="Ícone Cursos">
+        <img src="./assets/icons/unfilled/school_unfilled.svg" alt="Ícone Cursos">
         <span>Cursos</span>
     </a>
 </li>
 <li>
     <a href="https://www.youtube.com/podcasts">
-        <img src="/assets/icons/geral/podcast.svg" alt="Ícone Podcast">
+        <img src="./assets/icons/geral/podcast.svg" alt="Ícone Podcast">
         <span>Podcast</span>
     </a>
 </li>

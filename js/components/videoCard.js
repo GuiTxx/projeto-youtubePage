@@ -102,7 +102,7 @@ function videos_Load(result) {
 
                     <div class = "tres_pontinhos">
                         <button id = "mais_opcoes">
-                            <img src="/assets/icons/geral/tres_points.svg" alt="Mais opções Ícone">
+                            <img src="./assets/icons/geral/tres_points.svg" alt="Mais opções Ícone">
                         </button>
                     </div>
                 </div>

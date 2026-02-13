@@ -49,11 +49,11 @@ function create_Button(result) {
     <div class="criarButton"> 
         <div class="userActions"> 
             <button id="internoButton"> 
-                <img src="/assets/icons/geral/add_Icon.svg" alt="Criar vídeo"> 
+                <img src="./assets/icons/geral/add_Icon.svg" alt="Criar vídeo"> 
                 <h3>Criar</h3> 
             </button> 
             <button id="notifyButton"> 
-                <img src="/assets/icons/unfilled/notification_unfillled.svg" alt="Botão de Notificações"> 
+                <img src="./assets/icons/unfilled/notification_unfillled.svg" alt="Botão de Notificações"> 
             </button> 
         </div> 
         <div class="userProfile"> 
@@ -96,44 +96,44 @@ function you_section(){
     title_YOU.innerHTML = `
     <a href="#">
         <h2>Você</h2>
-        <img src="/assets/icons/geral/arrow_Right.svg" alt="Ícone de seta para direita">
+        <img src="./assets/icons/geral/arrow_Right.svg" alt="Ícone de seta para direita">
     </a>
     `
     ul_YOU.innerHTML = `
     <li>
         <a href="https://www.youtube.com/feed/history">
-            <img src="/assets/icons/geral/historico_Search.svg" alt="Ícone Histórico">
+            <img src="./assets/icons/geral/historico_Search.svg" alt="Ícone Histórico">
             <span>Histórico</span>
         </a>
     </li>
     <li>
         <a href="https://www.youtube.com/feed/playlists">
-            <img src="/assets/icons/geral/playlist.svg" alt="Ícone playlist">
+            <img src="./assets/icons/geral/playlist.svg" alt="Ícone playlist">
             <span>Playlist</span>
         </a>
     </li>
     <li>
         <a href="https://www.youtube.com/playlist?list=WL">
-            <img src="/assets/icons/unfilled/watchLater_Unfilled.svg" alt="Ícone assistir mais tarde">
+            <img src="./assets/icons/unfilled/watchLater_Unfilled.svg" alt="Ícone assistir mais tarde">
             <span>Assistir mais tarde</span>
         </a>
     </li>
     <li>
         <a href="https://www.youtube.com/playlist?list=LL">
-            <img src="/assets/icons/unfilled/Liked_videoUnfilled.svg" alt="Ícone vídeos curtidos">
+            <img src="./assets/icons/unfilled/Liked_videoUnfilled.svg" alt="Ícone vídeos curtidos">
             <span>Vídeos com "Gostei"</span>
         </a>
     </li>
     <li>
         <a href="#">
-            <img src="/assets/icons/unfilled/myVideos_unfilled.svg" alt="Ícone meus Vídeos">
+            <img src="./assets/icons/unfilled/myVideos_unfilled.svg" alt="Ícone meus Vídeos">
             <span>Seus vídeos</span>
         </a>
     </li>
     `
     more_YOU.innerHTML = `
     <button id="button_you">
-        <img src="/assets/icons/geral/arrow_Down.svg" alt="Ícone de seta para baixo">
+        <img src="./assets/icons/geral/arrow_Down.svg" alt="Ícone de seta para baixo">
         <h2>Mostrar mais</h2>
     </button>
     `
@@ -182,7 +182,7 @@ function subs_section(result) {
     // LOAD DO BOTÃO "INSCRIÇÕES"
     inscricoes_Button.innerHTML = `
     <h2>Inscrições</h2>
-    <img src="/assets/icons/geral/arrow_Right.svg" alt="Ícone de seta para direita">
+    <img src="./assets/icons/geral/arrow_Right.svg" alt="Ícone de seta para direita">
     `
     div_SUBSnav[4].appendChild(inscricoes_Button);
     div_SUBSnav[4].classList.add("subs");
@@ -210,7 +210,7 @@ function subs_section(result) {
     // RENDERIZAR O BOTÃO DE VER MAIS INSCRIÇÕES
     more_subs.innerHTML = `
     <button id="button_subs">
-        <img src="/assets/icons/geral/arrow_Down.svg" alt="Ícone de seta para baixo">
+        <img src="./assets/icons/geral/arrow_Down.svg" alt="Ícone de seta para baixo">
         <h2>Mostrar mais</h2>
     </button>
     `

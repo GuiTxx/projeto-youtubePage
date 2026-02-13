@@ -9,27 +9,27 @@ sideBar_slim.innerHTML = `
 <nav class="nav_slim">
     <ul>
         <li>
-            <a href="/">
-                <img src="/assets/icons/unfilled/home_Unfilled.svg" alt="Ícone Aba Início Youtube">
+            <a href="./">
+                <img src="./assets/icons/unfilled/home_Unfilled.svg" alt="Ícone Aba Início Youtube">
                 <span>Início</span>
             </a>
         </li>
         <li>
             <a href="https://www.youtube.com/shorts/">
-                <img src="/assets/icons/geral/shorts_IconYoutube.svg"
+                <img src="./assets/icons/geral/shorts_IconYoutube.svg"
                     alt="Ícone Aba Youtube Shorts">
                 <span>Shorts</span>
             </a>
         </li>
         <li>
             <a href="#">
-                <img src="/assets/icons/geral/subscribe_Icon.svg" alt="Ícone Inscrições" class="subs_slim">
+                <img src="./assets/icons/geral/subscribe_Icon.svg" alt="Ícone Inscrições" class="subs_slim">
                 <span>Inscrições</span>
             </a>
         </li>
         <li>
             <a href="#">
-                <img src="/assets/icons/unfilled/login_unfilled.svg" alt="Ícone Aba Youtube Shorts">
+                <img src="./assets/icons/unfilled/login_unfilled.svg" alt="Ícone Aba Youtube Shorts">
                 <span>Você</span>
             </a>
         </li>
