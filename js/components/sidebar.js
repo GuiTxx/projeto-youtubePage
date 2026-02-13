@@ -29,13 +29,13 @@ moreExplore.innerHTML = `
 </li>
 <li>
     <a href="https://www.youtube.com/gaming">
-        <img src="./assets/icons/unfilled/games_unfilled.svg" alt="Ícone Jogos">
+        <img src="./assets/icons/unfilled/games_Unfilled.svg" alt="Ícone Jogos">
         <span>Jogos</span>
     </a>
 </li>
 <li>
     <a href="https://www.youtube.com/channel/UCYfdidRxbB8Qhf0Nx7ioOYw">
-        <img src="./assets/icons/unfilled/news_unfilled.svg" alt="Ícone Notícias">
+        <img src="./assets/icons/unfilled/news_Unfilled.svg" alt="Ícone Notícias">
         <span>Notícias</span>
     </a>
 </li>
